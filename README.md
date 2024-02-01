@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# ThinkLog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 概要
 
-## Available Scripts
+ThinkLog は、メモ・日記・ToDo リスト・その他覚えておきたいことを記録・管理・整理するためのシンプルなメモアプリケーションです。
 
-In the project directory, you can run:
+React で構築され、メモの作成、編集、削除、閲覧の機能が備わっています。
 
-### `npm start`
+## インストール方法
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ThinkLog をローカルで実行するには、以下の手順に従ってください：
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. リポジトリのクローン
 
-### `npm test`
+クローンする任意のディレクトリ作成し、移動してから実行してください。
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+git clone https://github.com/hirano-vm4/react-spa.git
+```
 
-### `npm run build`
+2. 依存関係のインストール
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. アプリケーションの起動
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+npm start
+```
 
-### `npm run eject`
+アプリは`http://localhost:3000`で起動します。
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 使い方
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 新規作成
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+アプリを起動し、左のサイドバーの`新規作成`をクリックするとメモの編集画面が表示されます。
+メモの 1 行目がタイトルになることに注意してください。
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+入力が終わったらテキストエリア下にある`保存`ボタンを押します。お使いの PC のローカルストレージに保存され、サイドバーにタイトルが表示されます。
 
-## Learn More
+0 文字では保存できない点に注意してください。
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 編集・削除
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+サイドバーにあるタイトルをクリックすると、編集画面が開きます。編集して再度`保存`を押してください。メモの内容と更新日時が更新され、サイドバーの上部に表示されます。
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+削除したい場合は`削除`ボタンを押してください。ポップアップで削除して良いか最終確認されます。削除して問題なければ`OK`を押してください。この時点で対象のメモは削除されサイドバーにも表示がなくなります。
