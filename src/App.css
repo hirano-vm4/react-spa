@@ -1,38 +1,178 @@
 .App {
+  display: flex;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.MemoActionsContainer {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+}
+
+.MemoActionsContainer textarea {
+  width: 100%;
+  resize: vertical;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  background: -webkit-repeating-linear-gradient(
+    -45deg,
+    #f0f8ff,
+    #f0f8ff 3px,
+    #e9f4ff 3px,
+    #e9f4ff 7px
+  );
+  background: repeating-linear-gradient(
+    -45deg,
+    #f0f8ff,
+    #f0f8ff 3px,
+    #e9f4ff 3px,
+    #e9f4ff 7px
+  );
+}
+
+.MemoActionsContainer button {
+  width: 130px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.CreateButton {
+  padding: 10px 20px;
   color: white;
+  border: 2px solid #15a1cc;
+  background: transparent;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.CreateButton:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(115, 113, 113);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.TextArea {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 4px 16px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 0 0 1px #ccc inset;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  resize: vertical;
+  transition:
+    box-shadow 0.3s,
+    color 0.3s;
+}
+
+.TextArea:focus {
+  outline: 0;
+  box-shadow: 0 0 8px 2px rgb(33, 150, 243);
+}
+
+.MemoActionsContainer label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.Title {
+  color: #507093;
+}
+
+.ButtonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+}
+
+.ActionButton {
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 20px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  width: 130px;
+  padding: 10px;
+}
+
+.SaveButton {
+  border: 2px solid rgb(23, 204, 149);
+  background-color: rgb(23, 204, 149);
+}
+
+.SaveButton:hover {
+  box-shadow: 0 0 8px 1px rgb(33, 150, 243);
+}
+
+.DeleteButton {
+  border: 2px solid rgb(255, 68, 68);
+  background-color: rgb(255, 68, 68);
+}
+
+.DeleteButton:hover {
+  box-shadow: 0 0 8px 1px rgb(248, 74, 74);
+}
+
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 350px;
+  background-color: #2d445d;
+  padding: 20px;
+}
+
+.SidebarList {
+  height: auto;
+  padding: 0;
+  width: 100%;
+}
+
+.SidebarList .row {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.SidebarList .row:hover {
+  cursor: pointer;
+  background-color: #3b627a;
+}
+
+.SidebarLogo {
+  width: 45%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
