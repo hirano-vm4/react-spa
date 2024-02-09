@@ -1,6 +1,8 @@
 import "./App.css";
 import MemoList from "./MemoList";
 import MemoActions from "./MemoActions";
+import Authentication from "./Authentication";
+import { AuthContextProvider } from "./AuthContext";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -67,20 +69,23 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <MemoList
-        memos={memos}
-        onMemoSelect={handleMemoSelect}
-        onAddNewMemo={handleAddNewMemo}
-      />
-      {(selectedMemoId || isEditing) && (
-        <MemoActions
-          onSave={handleSaveMemo}
-          onDelete={handleDeleteMemo}
-          selectedMemo={memos.find((memo) => memo.id === selectedMemoId)}
+    <AuthContextProvider>
+      <div className="App">
+        <MemoList
+          memos={memos}
+          onMemoSelect={handleMemoSelect}
+          onAddNewMemo={handleAddNewMemo}
         />
-      )}
-    </div>
+        <Authentication />
+        {(selectedMemoId || isEditing) && (
+          <MemoActions
+            onSave={handleSaveMemo}
+            onDelete={handleDeleteMemo}
+            selectedMemo={memos.find((memo) => memo.id === selectedMemoId)}
+          />
+        )}
+      </div>
+    </AuthContextProvider>
   );
 };
 export default App;
