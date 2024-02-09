@@ -57,7 +57,9 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
   margin-top: 20px;
 }
 
@@ -78,7 +80,9 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   resize: vertical;
-  transition: box-shadow 0.3s, color 0.3s;
+  transition:
+    box-shadow 0.3s,
+    color 0.3s;
 }
 
 .TextArea:focus {
@@ -111,7 +115,9 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
   width: 130px;
   padding: 10px;
 }
@@ -145,7 +151,9 @@
   width: 120px;
   padding: 10px;
   background-color: #7dbcff;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .LoginButton:hover {

@@ -27,7 +27,7 @@ const App = () => {
       updatedMemos = memos.map((memo) =>
         memo.id === selectedMemoId
           ? { ...memo, content, updateAt: Date.now() }
-          : memo
+          : memo,
       );
       setMessage("メモが更新されました");
     } else {
