@@ -10,6 +10,7 @@ const App = () => {
   const [memos, setMemos] = useState([]);
   const [selectedMemoId, setSelectedMemoId] = useState(0);
   const [isEditing, setIsEditing] = useState(false);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     const savedMemos = localStorage.getItem("memos");
@@ -28,6 +29,7 @@ const App = () => {
           ? { ...memo, content, updateAt: Date.now() }
           : memo
       );
+      setMessage("メモが更新されました");
     } else {
       const newMemo = {
         id: uuidv4(),
@@ -36,6 +38,7 @@ const App = () => {
         updateAt: Date.now(),
       };
       updatedMemos = [...memos, newMemo];
+      setMessage("新しいメモが保存されました");
     }
 
     refreshMemoState(updatedMemos);
@@ -44,6 +47,7 @@ const App = () => {
   const handleDeleteMemo = (id) => {
     const updatedMemos = memos.filter((memo) => memo.id !== id);
 
+    setMessage("メモが削除されました");
     refreshMemoState(updatedMemos);
   };
 
@@ -66,11 +70,13 @@ const App = () => {
     saveMemoToLocalStorage(memos);
     setSelectedMemoId(0);
     setIsEditing(false);
+    setTimeout(() => setMessage(""), 3000);
   };
 
   return (
     <AuthContextProvider>
       <div className="App">
+        {message && <div className="MessageContainer">{message}</div>}
         <MemoList
           memos={memos}
           onMemoSelect={handleMemoSelect}

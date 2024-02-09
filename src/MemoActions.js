@@ -20,10 +20,8 @@ const MemoActions = ({ onSave, onDelete, selectedMemo }) => {
 
     if (selectedMemo) {
       onSave(memoText);
-      alert("メモが更新されました");
     } else {
       onSave(memoText);
-      alert("新しいメモが保存されました");
     }
     setMemoText("");
   };
@@ -33,7 +31,6 @@ const MemoActions = ({ onSave, onDelete, selectedMemo }) => {
 
     if (check) {
       onDelete(selectedMemo.id);
-      alert("メモが削除されました");
       setMemoText("");
     }
   };
