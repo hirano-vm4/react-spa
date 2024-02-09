@@ -57,9 +57,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
   margin-top: 20px;
 }
 
@@ -80,9 +78,7 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   resize: vertical;
-  transition:
-    box-shadow 0.3s,
-    color 0.3s;
+  transition: box-shadow 0.3s, color 0.3s;
 }
 
 .TextArea:focus {
@@ -115,9 +111,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
   width: 130px;
   padding: 10px;
 }
@@ -138,6 +132,25 @@
 
 .DeleteButton:hover {
   box-shadow: 0 0 8px 1px rgb(248, 74, 74);
+}
+
+.LoginButton {
+  position: absolute;
+  right: 50px;
+  top: 40px;
+  color: whitesmoke;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  width: 120px;
+  padding: 10px;
+  background-color: #7dbcff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.LoginButton:hover {
+  background-color: #bcd9f8;
+  color: rgb(80, 80, 80);
 }
 
 .Sidebar {
