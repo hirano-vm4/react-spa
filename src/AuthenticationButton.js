@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "./AuthContext";
 
-const Authentication = () => {
+const AuthenticationButton = () => {
   const { isLoggedIn, login, logout } = useContext(AuthContext);
 
   return (
@@ -11,4 +11,4 @@ const Authentication = () => {
   );
 };
 
-export default Authentication;
+export default AuthenticationButton;

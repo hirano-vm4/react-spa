@@ -1,7 +1,7 @@
 import "./App.css";
 import MemoList from "./MemoList";
 import MemoActions from "./MemoActions";
-import Authentication from "./Authentication";
+import AuthenticationButton from "./AuthenticationButton";
 import { AuthContextProvider } from "./AuthContext";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -27,7 +27,7 @@ const App = () => {
       updatedMemos = memos.map((memo) =>
         memo.id === selectedMemoId
           ? { ...memo, content, updateAt: Date.now() }
-          : memo,
+          : memo
       );
       setMessage("メモが更新されました");
     } else {
@@ -82,7 +82,7 @@ const App = () => {
           onMemoSelect={handleMemoSelect}
           onAddNewMemo={handleAddNewMemo}
         />
-        <Authentication />
+        <AuthenticationButton />
         {(selectedMemoId || isEditing) && (
           <MemoActions
             onSave={handleSaveMemo}
