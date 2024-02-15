@@ -1,8 +1,11 @@
 import React from "react";
 import Logo from "./Logo";
+import { useContext } from "react";
+import { AuthContext } from "./AuthContext";
 
 const MemoList = ({ memos, onMemoSelect, onAddNewMemo }) => {
   const sortedByUpdate = [...memos].sort((a, b) => b.updateAt - a.updateAt);
+  const { isLoggedIn } = useContext(AuthContext);
 
   return (
     <div className="Sidebar">
@@ -18,9 +21,12 @@ const MemoList = ({ memos, onMemoSelect, onAddNewMemo }) => {
           </li>
         ))}
       </ul>
-      <button onClick={onAddNewMemo} className="CreateButton">
-        新規作成
-      </button>
+
+      {isLoggedIn && (
+        <button onClick={onAddNewMemo} className="CreateButton">
+          新規作成
+        </button>
+      )}
     </div>
   );
 };

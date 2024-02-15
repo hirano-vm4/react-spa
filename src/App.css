@@ -140,6 +140,27 @@
   box-shadow: 0 0 8px 1px rgb(248, 74, 74);
 }
 
+.LoginButton {
+  position: absolute;
+  right: 50px;
+  top: 40px;
+  color: whitesmoke;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  width: 120px;
+  padding: 10px;
+  background-color: #7dbcff;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.LoginButton:hover {
+  background-color: #bcd9f8;
+  color: rgb(80, 80, 80);
+}
+
 .Sidebar {
   display: flex;
   flex-direction: column;
@@ -175,4 +196,20 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.MessageContainer {
+  position: fixed;
+  top: 5%;
+  left: 35%;
+  font-weight: bold;
+  background-color: #eed1d3;
+  color: #c73e4c;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #f4d1d4;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 80%;
+  text-align: center;
 }
